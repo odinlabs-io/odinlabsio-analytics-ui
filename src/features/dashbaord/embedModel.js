@@ -22,8 +22,16 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+export type Embed = {
+    status: string,
+    srcPath: string,
+    appPath: string,
+    elementId: string,
+    headers: { [string]: string }
+}
+
+export type Embeds = {
+    status: string,
+    ids: string[],
+    items: { [string]: Embed }
+}

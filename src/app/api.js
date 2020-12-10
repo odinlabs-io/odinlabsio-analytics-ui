@@ -22,8 +22,14 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+import axios from 'axios'
+
+const api_config = {
+    timeout: 1000,
+}
+
+if (process.env.NODE_ENV !== 'production') {
+    api_config.baseURL = process.env.REACT_APP_API_BASE_URL
+}
+
+export const api = axios.create(api_config);

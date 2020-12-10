@@ -1,0 +1,158 @@
+/*!******************************************************************************
+ * #  MIT License
+ * #
+ * #  Copyright (c) 2020 OdinLabs IO
+ * #
+ * #  Permission is hereby granted, free of charge, to any person obtaining a copy
+ * #  of this software and associated documentation files (the "Software"), to deal
+ * #  in the Software without restriction, including without limitation the rights
+ * #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * #  copies of the Software, and to permit persons to whom the Software is
+ * #  furnished to do so, subject to the following conditions:
+ * #
+ * #  The above copyright notice and this permission notice shall be included in all
+ * #  copies or substantial portions of the Software.
+ * #
+ * #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * #  SOFTWARE.
+ ******************************************************************************/
+
+$red: #E1332D;
+$lightred: #ec7575;
+
+.user-avatar {
+  display: flex;
+  align-items: center;
+}
+
+// side bar
+div.analytics-app-sidebar {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: $red;
+  background: linear-gradient(180deg, rgba($red, 1) 58%, rgba($lightred, 1) 100%);
+
+  p {
+    color: white;
+    font-weight: bolder;
+    margin-top: 16px;
+    position: relative;
+    left: 10%;
+  }
+
+  > * {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+div.analytics-app-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+div.analytics-app-sidebar-menu::after,
+div.analytics-app-sidebar-menu::before {
+  content: '';
+  display: block;
+  position: relative;
+  top: 0;
+  width: 80%;
+  left: 10%;
+  border-top: 1px solid rgba($lightred, 0.8);
+}
+
+// btn
+div.analytics-app-sidebar-menu .btn {
+  color: #fff;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 30px;
+  position: relative;
+  width: 100%;
+  background: none;
+  border: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+div.analytics-app-sidebar-menu .btn.active.focus,
+div.analytics-app-sidebar-menu .btn.active:focus,
+div.analytics-app-sidebar-menu .btn.focus,
+div.analytics-app-sidebar-menu .btn.focus:active,
+div.analytics-app-sidebar-menu .btn:active:focus,
+div.analytics-app-sidebar-menu .btn:focus {
+  outline: 0 !important;
+  outline-offset: 0 !important;
+  background-image: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+div.analytics-app-sidebar-menu .btn-sidebar-disabled::after,
+div.analytics-app-sidebar-menu .btn-sidebar-disabled::before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0);
+  bottom: 0;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+div.analytics-app-sidebar-menu .btn-sidebar-enabled::after,
+div.analytics-app-sidebar-menu .btn-sidebar-enabled::before {
+  backface-visibility: hidden;
+  border: 1px solid rgba(#fff, 0.65);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 70%;
+}
+
+div.analytics-app-sidebar-menu .btn-sidebar-disabled:hover::after,
+div.analytics-app-sidebar-menu .btn-sidebar-disabled:hover::before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 50%;
+}
+
+div.analytics-app-sidebar-menu .btn-sidebar-enabled:hover::after,
+div.analytics-app-sidebar-menu .btn-sidebar-enabled:hover::before {
+  backface-visibility: hidden;
+  border-color: #fff;
+  transition: width 350ms ease-in-out;
+  width: 50%;
+}
+
+
+div.analytics-app-sidebar-menu.btn-sidebar-disabled:hover::before {
+  bottom: auto;
+  top: 0;
+  width: 50%;
+}
+
+div.analytics-app-sidebar-menu.btn-sidebar-enabled:hover::before {
+  bottom: auto;
+  top: 0;
+  width: 50%;
+}

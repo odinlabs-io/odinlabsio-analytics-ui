@@ -1,4 +1,4 @@
-/*******************************************************************************
+/*!******************************************************************************
  * #  MIT License
  * #
  * #  Copyright (c) 2020 OdinLabs IO
@@ -22,8 +22,34 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.analytics-app {
+  display: flex;
+  flex-direction: row;
+  flex: 1 1 auto;
+  align-items: stretch;
+}
+
+.analytics-app-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  max-width: 250px;
+  min-width: 100px;
+  flex: 1 1 20%;
+}
+
+.analytics-app-center {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 80%;
+}

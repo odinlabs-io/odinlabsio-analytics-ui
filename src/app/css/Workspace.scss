@@ -1,4 +1,4 @@
-/*******************************************************************************
+/*!******************************************************************************
  * #  MIT License
  * #
  * #  Copyright (c) 2020 OdinLabs IO
@@ -22,8 +22,46 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+div.analytics-workspace {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  background: ghostwhite;
+}
+
+div.analytics-workspace-toolbar {
+  flex: min-content;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+div.analytics-workspace-toolbar > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  background: white;
+}
+
+div.analytics-workspace-board {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  padding: 8px 8px 8px 8px;
+  margin: 8px 8px 8px 8px;
+}
+
+div.analytics-workspace-left {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+div.analytics-workspace-main {
+  display: flex;
+  flex: 2 1 auto;
+  flex-direction: column;
+}

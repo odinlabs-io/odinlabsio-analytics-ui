@@ -22,8 +22,41 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+import React, {useState} from "react";
+import TextField from "@material-ui/core/TextField";
+
+
+export const NamedObjectGroup = (props) => {
+    const {ids, add, render, otherProps} = props
+
+    const [name, setName] = useState("")
+
+    const onAddSubmit = (event) => {
+        if (event.code === "Enter" && event.target.value) {
+            setName('')
+            add({...props, name: event.target.value})
+        }
+    }
+
+    const onAddChange = (event) => {
+
+        setName(event.target.value)
+    }
+
+    return (
+        <React.Fragment>
+            <TextField size={"small"} ariant="filled" label={props.label}
+                       placeholder={props.placeholder} {...otherProps}
+                       onKeyUp={onAddSubmit} onChange={onAddChange} value={name}/>
+            <div className="param-group">
+                {ids.map((objectId) => {
+                    return render({
+                        ...props,
+                        key: objectId,
+                        id: objectId
+                    })
+                })}
+            </div>
+        </React.Fragment>
+    )
+}

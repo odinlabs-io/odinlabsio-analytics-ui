@@ -22,8 +22,18 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+import {createSlice} from "@reduxjs/toolkit";
+import type {User} from "./userModel";
+
+export const DEFAULT_USER: User = {
+    login: {name: 'Guest'},
+}
+
+const userSlice = createSlice({
+    name: 'user',
+    initialState: {...DEFAULT_USER},
+    reducers: {},
+    extraReducers: {}
+})
+
+export const userReducer = userSlice.reducer

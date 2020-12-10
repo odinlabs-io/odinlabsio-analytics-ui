@@ -1,0 +1,141 @@
+/*!******************************************************************************
+ * #  MIT License
+ * #
+ * #  Copyright (c) 2020 OdinLabs IO
+ * #
+ * #  Permission is hereby granted, free of charge, to any person obtaining a copy
+ * #  of this software and associated documentation files (the "Software"), to deal
+ * #  in the Software without restriction, including without limitation the rights
+ * #  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * #  copies of the Software, and to permit persons to whom the Software is
+ * #  furnished to do so, subject to the following conditions:
+ * #
+ * #  The above copyright notice and this permission notice shall be included in all
+ * #  copies or substantial portions of the Software.
+ * #
+ * #  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * #  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * #  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * #  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * #  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * #  SOFTWARE.
+ ******************************************************************************/
+
+$white: #fff;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+div[data-param-valid="false"] {
+  border: 1px solid red;
+}
+
+.MuiInput-input.MuiInput-inputMarginDense.MuiInputBase-input.MuiInputBase-inputMarginDense.MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu {
+  height: auto;
+}
+
+.left-menu-toolbox {
+  display: flex;
+  flex-direction: row;
+
+  .toolbox-menu {
+    border-right: 2px solid antiquewhite;
+    flex: 0 1 10%;
+
+    & .active {
+      background-color: antiquewhite;
+    }
+  }
+
+  > div {
+    flex: 1 1 90%;
+  }
+}
+
+.param-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  margin: 2px;
+  padding: 2px;
+
+  .param-row {
+    display: inline-flex;
+    padding-top: 4px;
+    margin-top: 4px;
+    padding-bottom: 4px;
+    margin-bottom: 4px;
+
+    .param-item {
+      display: flex;
+      align-items: stretch;
+      padding: 0 4px 0 4px;
+      margin: 0 4px 0 4px;
+
+      > div {
+        flex: 1 1 auto;
+      }
+    }
+
+    .param-item:first-child {
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .param-item:last-child {
+      padding-right: 0;
+      margin-right: 0;
+    }
+  }
+}
+
+.param-arg-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1 1 auto;
+
+  .param-arg-item {
+    display: flex;
+    flex-direction: row;
+    padding: 0 2px 0 2px;
+    margin: 0 2px 0 2px;
+    align-items: center;
+
+    > div {
+      flex: 1 1 auto;
+    }
+  }
+
+  .param-arg-item:first-child {
+    padding-left: 0;
+    margin-left: 0;
+    flex: 0 0 100%;
+  }
+
+  .param-arg-item:not(:first-child) {
+    flex: 1 1 auto;
+  }
+
+  .param-arg-item:nth-child(2) {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .param-arg-item:last-child {
+    padding-right: 0;
+    margin-right: 0;
+  }
+}

@@ -22,8 +22,30 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+export type Dashboard = {
+    status: string,
+    dashboardId: string,
+    dashboards: {
+        ids: [],
+        items: {
+            [string]:
+                {
+                    dashboardId: string,
+                    dashboardTitle: string,
+                    dashboardDescription: string,
+                    createdBy: string
+                }
+        }
+    },
+    settings: {
+        chart: {
+            typeOptions: { [string]: string }
+        },
+        grid: {
+            cols: { [string]: number },
+            breakPoints: { [string]: number },
+            rowHeight: number,
+            width: number
+        }
+    },
+}

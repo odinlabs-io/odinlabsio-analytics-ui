@@ -22,8 +22,29 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+import './css/App.scss';
+import React from "react";
+import {BrowserRouter as Router} from 'react-router-dom';
+import {Sidebar} from "./Tools";
+import {Workspace} from "./Workspace";
+
+function App() {
+    return (
+        <Router>
+            <div className="container-fluid">
+                <div className="analytics-app">
+                    <div className="analytics-app-left">
+                        <Sidebar/>
+                    </div>
+                    <div className="analytics-app-center">
+                        <React.Fragment>
+                            <Workspace/>
+                        </React.Fragment>
+                    </div>
+                </div>
+            </div>
+        </Router>
+    )
+}
+
+export default App;

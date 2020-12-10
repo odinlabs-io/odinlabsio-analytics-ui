@@ -22,8 +22,49 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+export type Source =
+    {
+        sourceId: string,
+    }
+export type Column =
+    {
+        columnId: string
+    }
+export type Filter =
+    {
+        filterId: string,
+        value: string,
+        valid: boolean
+    }
+
+export type JoinTable =
+    {
+        joinSourceId: string,
+        onLeft: Column[],
+        onRight: Column[];
+
+        defaultValues:
+            {
+                [string]: any
+            }
+    }
+
+
+export type Scope = {
+    status: string,
+    scopeId: string,
+
+    source: Source,
+    filter: Filter,
+    columns: Column[],
+    joins: { ids: string[], items: { [string]: JoinTable } },
+
+    columnOptions: { ids: string[], items: { [string]: Column[] } },
+    sources: Source[],
+    filters: Column[],
+    filterColumnIds: string[],
+    categories: Column[],
+    categoryColumnIds: string[],
+    measures: Column[],
+    measureColumnIds: string[]
+}

@@ -22,8 +22,38 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+import './css/DefaultComponents.scss'
+
+import React, {useRef} from "react";
+import IconButton from "@material-ui/core/IconButton";
+import {DeleteForever, Edit} from "@material-ui/icons";
+
+export const StudioDashboardItem = (props) => {
+    const ref = useRef()
+    const {item, onEdit, onRemove} = props
+    return (
+        <div ref={ref} className="analytics-item analytics-studio-item">
+            <div className="analytics-studio-item-action">
+                <IconButton aria-label="edit" onClick={() => onEdit(ref)}>
+                    <Edit/>
+                </IconButton>
+            </div>
+            {item({...props})}
+            <div className="analytics-studio-item-action">
+                <IconButton aria-label="deletes" onClick={() => onRemove(ref)}>
+                    <DeleteForever/>
+                </IconButton>
+            </div>
+        </div>
+    )
+}
+
+export const PresentationDashboardItem = (props) => {
+    const ref = useRef()
+    const {item} = props
+    return (
+        <div ref={ref} className="analytics-item  analytics-presentation-item">
+            {item({...props})}
+        </div>
+    )
+}

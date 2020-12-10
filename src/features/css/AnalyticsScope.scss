@@ -1,4 +1,4 @@
-/*******************************************************************************
+/*!******************************************************************************
  * #  MIT License
  * #
  * #  Copyright (c) 2020 OdinLabs IO
@@ -22,8 +22,69 @@
  * #  SOFTWARE.
  ******************************************************************************/
 
-// jest-dom adds custom jest matchers for asserting on DOM nodes.
-// allows you to do things like:
-// expect(element).toHaveTextContent(/react/i)
-// learn more: https://github.com/testing-library/jest-dom
-import '@testing-library/jest-dom';
+div.analytics-scope {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+div.analytics-scope-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+div.analytics-scope-data-source {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  padding: 8px;
+
+  .analytics-scope-data-source-configuration:first-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+    padding: 4px;
+    margin: 4px;
+  }
+
+  .analytics-scope-data-source-configuration:last-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 50%;
+    padding: 4px;
+    margin: 4px;
+  }
+}
+
+#main-data-source {
+  .param-group {
+    .param-row {
+      .param-item:last-child {
+        flex: 1 1 80%;
+      }
+
+      .param-item:not(:last-child) {
+        flex: 1 0 auto;
+      }
+    }
+  }
+}
+
+#join-data-source {
+  .param-group {
+    .param-row {
+      .param-item:last-child {
+        flex: 1 1 auto;
+      }
+
+      .param-item:not(:last-child) {
+        flex: 1 1 auto;
+      }
+    }
+  }
+}
+
